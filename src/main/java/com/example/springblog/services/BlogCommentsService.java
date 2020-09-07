@@ -73,6 +73,11 @@ public class BlogCommentsService {
         return true;
     }
 
+    public Integer findLikes(Long commentId) {
+
+        return blogCommentsRepository.findById(commentId).get().getLikes();
+    }
+
     public Optional<BlogComments> increaseLike(Long commentId){
 
         Optional<BlogComments> currentLikeNumber = blogCommentsRepository.findById(commentId);
@@ -95,5 +100,7 @@ public class BlogCommentsService {
         return currentLikeNumber;
 
     }
+
+
 }
 

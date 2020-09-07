@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/home")
+@RequestMapping("/home/blogpost")
 public class BlogPostControllers {
 
     private BlogPostService blogPostService;
@@ -61,7 +61,7 @@ public class BlogPostControllers {
         BlogPost newBlogPost = blogPostService.savePost(blogPost);
 
         try {
-                return ResponseEntity.created(new URI("/home"+blogPost.getBlogId()))
+                return ResponseEntity.created(new URI("/home/blogpost"+blogPost.getBlogId()))
                                     .body(blogPost);
         } catch (URISyntaxException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
@@ -78,7 +78,7 @@ public class BlogPostControllers {
                     try{
                         return ResponseEntity
                                 .ok()
-                                .location(new URI("/home/" + blogPost.getBlogId()))
+                                .location(new URI("/home/blogpost/" + blogPost.getBlogId()))
                                 .body(blogPost);
                     }
                     catch(URISyntaxException e){ return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); }
