@@ -101,15 +101,15 @@ public class UserAccount {
         this.commentList = commentList;
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        UserAccount userAccount = (UserAccount) o;
-//        return Objects.equals(userId, userAccount.userId) &&
-//                Objects.equals(dateCreated, userAccount.dateCreated) &&
-//                Objects.equals(username, userAccount.username) &&
-//                Objects.equals(password, userAccount.password) &&
-//                Objects.equals(email, userAccount.email);
-//    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserAccount userAccount = (UserAccount) o;
+        return Objects.equals(userId, userAccount.userId) &&
+                Objects.equals(dateCreated, userAccount.dateCreated) &&
+                Objects.equals(username, userAccount.username) &&
+                Objects.equals(password, userAccount.password) &&
+                Objects.equals(email, userAccount.email);
+    }
 }

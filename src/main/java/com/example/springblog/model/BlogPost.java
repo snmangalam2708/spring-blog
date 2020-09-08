@@ -11,7 +11,7 @@ public class BlogPost {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "blog_id")
     private Long blogId;
-    @Column(name = "date_created")
+    @Column(name = "blog_date_created")
     private LocalDate dateCreated;
     @Column(name = "username")
     private String username;

@@ -24,7 +24,7 @@ public class BlogCommentsControllers{
     @Autowired
     public BlogCommentsControllers(BlogCommentsService blogCommentsService){ this.blogCommentsService = blogCommentsService; }
 
-    @GetMapping("/{commentId")
+    @GetMapping("/{commentId}")
     public ResponseEntity<?> findById(@PathVariable Long commentId){
 
         return blogCommentsService.findById(commentId)
@@ -32,7 +32,7 @@ public class BlogCommentsControllers{
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/all/userId")
+    @GetMapping("/all/{userId}")
     public ResponseEntity<?> findAllByUserId(@PathVariable Long userId){
 
         return new ResponseEntity(blogCommentsService.findAllByUserId(userId), HttpStatus.OK);
